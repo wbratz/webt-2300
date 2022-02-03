@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">	
+    <title>Sum of Numbers</title>
+    <script>
+		let loop = true;
+
+
+		do {
+			let userResponse = prompt("Enter any top number to sum from 1 through 100");
+			let userResponseInt = parseInt(userResponse);
+
+			if(userResponseInt > 0 && userResponseInt <= 100) {
+				let sum = 0;
+
+				for(let i = 1; i <= userResponseInt; i++) {
+					sum += i;
+				}
+				alert(`The sum of numbers from 1 through ${userResponseInt} is ${sum}.`);
+
+				let cont = prompt("Do another sum? (y/n)");
+				cont == 'y' ? loop = true : loop = false;
+
+			} else {
+				alert("Please enter a number between 1 and 100.");
+			}
+		} while(loop);		
+    </script>
+</head>
+<body>
+    <main>
+        <!-- Will show after JavaScript has run -->
+        <h1>Thanks for using the Sum of Numbers application!</h1>
+    </main>
+</body>
+</html>
