@@ -4,28 +4,38 @@
     <meta charset="UTF-8">	
     <title>Sum of Numbers</title>
     <script>
-		let loop = true;
 
+		let outerLoop = true;
+		do {	
+			let innerLoop = true;
 
-		do {
-			let userResponse = prompt("Enter any top number to sum from 1 through 100");
-			let userResponseInt = parseInt(userResponse);
-
-			if(userResponseInt > 0 && userResponseInt <= 100) {
-				let sum = 0;
+			do {	
+				let userResponse = prompt("Enter any top number to sum from 1 through 100");
+				let userResponseInt = parseInt(userResponse);
+				
+				if(userResponseInt > 0 && userResponseInt <= 100) {
+					let sum = 0;
 
 				for(let i = 1; i <= userResponseInt; i++) {
 					sum += i;
 				}
 				alert(`The sum of numbers from 1 through ${userResponseInt} is ${sum}.`);
+				innerLoop = false;
 
-				let cont = prompt("Do another sum? (y/n)");
-				cont == 'y' ? loop = true : loop = false;
-
-			} else {
+				} else {
 				alert("Please enter a number between 1 and 100.");
+				}
+			} while(innerLoop);	
+
+			let continueResponse = prompt("Do another sum? (y/n)");
+			if(continueResponse === "y") {
+				outerLoop = true;
+			} else {
+				outerLoop = false;
 			}
-		} while(loop);		
+		} while(outerLoop)
+		
+		
     </script>
 </head>
 <body>
