@@ -11,15 +11,14 @@
 
 			do {	
 				let userResponse = prompt("Enter any top number to sum from 1 through 100");
-				let userResponseInt = parseInt(userResponse);
 				
-				if(userResponseInt > 0 && userResponseInt <= 100) {
+				if(!isNaN(userResponse) && userResponse > 0 && userResponse <= 100) {
 					let sum = 0;
 
-				for(let i = 1; i <= userResponseInt; i++) {
+				for(let i = 1; i <= userResponse; i++) {
 					sum += i;
 				}
-				alert(`The sum of numbers from 1 through ${userResponseInt} is ${sum}.`);
+				alert(`The sum of numbers from 1 through ${userResponse} is ${sum}.`);
 				innerLoop = false;
 
 				} else {
